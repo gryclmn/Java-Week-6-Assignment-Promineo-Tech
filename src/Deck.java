@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,17 +11,18 @@ public class Deck {
      * ********************
      */
     List<Card> cards = new ArrayList<Card>();
+    List<String> suits = Arrays.asList("Diamonds", "Hearts", "Clubs", "Spades");
 
     public Deck() {
+
         for (int i = 2; i < 15; i++) {
-            cards.add(new Card(i, "Diamonds"));
-            cards.add(new Card(i, "Hearts"));
-            cards.add(new Card(i, "Clubs"));
-            cards.add(new Card(i, "Spades"));
+
+            for (String suit : suits) {
+                cards.add(new Card(i, suit));
+            }
+
         }
-//        for (Card card : cards) {
-//            System.out.println(card.getName());
-//        }
+
     }
 
     public void shuffle() {
